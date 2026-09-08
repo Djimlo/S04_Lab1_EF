@@ -1,4 +1,6 @@
+using Microsoft.EntityFrameworkCore;
 using ZombieParty.Models;
+using ZombieParty.Models.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Injection des dépendances
+builder.Services.AddDbContext<ZombiePartyDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddSingleton<BaseDonnees>();
 
 
