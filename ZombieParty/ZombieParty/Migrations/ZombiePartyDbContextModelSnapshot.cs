@@ -48,7 +48,7 @@ namespace ZombieParty.Migrations
 
                     b.HasIndex("ZombieTypeId");
 
-                    b.ToTable("Zombies");
+                    b.ToTable("Zombies", (string)null);
                 });
 
             modelBuilder.Entity("ZombieParty.Models.ZombieType", b =>
@@ -69,7 +69,7 @@ namespace ZombieParty.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ZombieTypes");
+                    b.ToTable("ZombieTypes", (string)null);
                 });
 
             modelBuilder.Entity("ZombieParty.Models.Zombie", b =>
